@@ -454,10 +454,10 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 0
-    Collab: 1
+    Collab: 0
     ErrorHub: 0
     Hub: 0
-    UNet: 1
+    UNet: 0
   cloudProjectId: 49551154-d1ea-4345-8cc7-7a3779bec710
   projectName: HighwayHavok
   organizationId: elonybear
