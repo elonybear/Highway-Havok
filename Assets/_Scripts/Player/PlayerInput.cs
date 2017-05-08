@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
-  KeyCode right = KeyCode.RightArrow;
-  KeyCode D = KeyCode.D;
+  static readonly KeyCode right = KeyCode.RightArrow;
+  static readonly KeyCode D = KeyCode.D;
 
-  KeyCode left = KeyCode.LeftArrow;
-  KeyCode A = KeyCode.A;
+  static readonly KeyCode left = KeyCode.LeftArrow;
+  static readonly KeyCode A = KeyCode.A;
 
 	// Update is called once per frame
 	void Update () {
@@ -19,10 +19,6 @@ public class PlayerInput : MonoBehaviour {
 
     if (Input.GetKeyDown(left) || Input.GetKeyUp(A)) {
       Player.S.PM.SwitchLanes(Utils.Movement.Left);
-    }
-
-    if (Input.GetKeyDown(KeyCode.Space)) {
-      Player.S.PM.Jump();
     }
 	}
 }

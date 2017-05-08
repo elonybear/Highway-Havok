@@ -6,18 +6,14 @@ public class PlayerMovement : MonoBehaviour {
 
   public float speed;
   public float jumpForce;
-  public bool grounded = true;
+  public bool grounded;
 
-  int groundLayerMask;
-
-  Rigidbody rigid;
+  int m_groundLayerMask;
 
 	// Use this for initialization
 	void Start () {
-    rigid = GetComponent<Rigidbody>();
-    rigid.velocity = Vector3.forward * speed;
-
-    groundLayerMask = LayerMask.GetMask(Utils.LAYER_GROUND);
+    grounded = true;
+    m_groundLayerMask = LayerMask.GetMask(Utils.LAYER_GROUND);
 	}
 	
 	// Update is called once per frame
@@ -35,19 +31,8 @@ public class PlayerMovement : MonoBehaviour {
     transform.position = pos;
   }
 
-  public void Jump () {
-
-
-    if (!Grounded()) return;
-
-    Vector3 velocity = rigid.velocity;
-
-    velocity.y = jumpForce;
-    rigid.velocity = velocity;
-  }
-
   bool Grounded () {
-    return Physics.Raycast(transform.position, Vector3.down, 2, groundLayerMask);
+    return Physics.Raycast(transform.position, Vector3.down, 2, m_groundLayerMask);
   }
   
   public float targetX { get; set; } 

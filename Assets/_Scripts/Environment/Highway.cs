@@ -8,33 +8,33 @@ public class Highway : MonoBehaviour {
 
   public GameObject highwayComponent;
 
-  List<GameObject> instantiatedComponents;
+  List<GameObject> m_instantiatedComponents;
 
 	// Use this for initialization
 	void Awake () {
 
     S = this;
 
-	  instantiatedComponents = new List<GameObject>();	
+	  m_instantiatedComponents = new List<GameObject>();	
 
     GameObject component = GameObject.Instantiate<GameObject>(highwayComponent);
     component.transform.position = Vector3.zero;
     component.transform.parent = transform;
 
-    instantiatedComponents.Add(component);
+    m_instantiatedComponents.Add(component);
 	}
 
   public void PlayerTriggered (Vector3 pos) {
     GameObject component = GameObject.Instantiate<GameObject>(highwayComponent);
-    pos.z += Utils.COMPONENT_LENGTH;
+    pos.y += Utils.COMPONENT_LENGTH;
     component.transform.position = pos;
     component.transform.parent = transform;
 
-    instantiatedComponents.Add(component);
+    m_instantiatedComponents.Add(component);
 
-    if (instantiatedComponents.ToArray().Length > 2) {
-      Destroy(instantiatedComponents[0]);
-      instantiatedComponents.RemoveAt(0);
+    if (m_instantiatedComponents.ToArray().Length > 2) {
+      Destroy(m_instantiatedComponents[0]);
+      m_instantiatedComponents.RemoveAt(0);
     } 
   } 
 }

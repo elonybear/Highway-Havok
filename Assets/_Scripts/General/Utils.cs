@@ -18,6 +18,6 @@ public static class Utils {
 
   public static readonly float [] DIRECTION_OFFSETS = new float[2]{ -6, 6 };
 
-  public static readonly float MAX_X_POSITION = 8.875f;
+  public static readonly float MAX_X_POSITION = 9f;
   public static readonly float MIN_X_POSITION = -9.125f;
 }
