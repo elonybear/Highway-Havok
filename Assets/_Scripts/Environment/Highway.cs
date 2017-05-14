@@ -37,4 +37,12 @@ public class Highway : MonoBehaviour {
       m_instantiatedComponents.RemoveAt(0);
     } 
   } 
+
+  public void ResetHighway () {
+    foreach(GameObject comp in m_instantiatedComponents) {
+      Vector3 pos = comp.transform.position;
+      pos.y -= Utils.RESET_TRANSFORM_POS_Y;
+      comp.transform.position = pos;
+    }
+  }
 }

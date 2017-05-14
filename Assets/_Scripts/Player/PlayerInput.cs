@@ -10,15 +10,52 @@ public class PlayerInput : MonoBehaviour {
   static readonly KeyCode left = KeyCode.LeftArrow;
   static readonly KeyCode A = KeyCode.A;
 
-	// Update is called once per frame
-	void Update () {
-  
-	  if (Input.GetKeyDown(right) || Input.GetKeyUp(D)) {
+  static readonly KeyCode up = KeyCode.UpArrow;
+  static readonly KeyCode W = KeyCode.W;
+
+  static readonly KeyCode down = KeyCode.DownArrow;
+  static readonly KeyCode S = KeyCode.S;
+
+  bool m_decelerate;
+  bool m_accelerate;
+
+  // Update is called once per frame
+  void Update() {
+
+    if (Input.GetKeyDown(right) || Input.GetKeyUp(D)) {
       Player.S.PM.SwitchLanes(Utils.Movement.Right);
-    } 
+    }
 
     if (Input.GetKeyDown(left) || Input.GetKeyUp(A)) {
       Player.S.PM.SwitchLanes(Utils.Movement.Left);
     }
+
+    if (Input.GetKeyDown(up) || Input.GetKeyDown(W)) {
+      m_decelerate = false;
+      m_accelerate = true;
+    }
+
+    if (Input.GetKeyDown(down) || Input.GetKeyDown(S)) {
+      m_accelerate = false;
+      m_decelerate = true;
+    }
+
+    if (Input.GetKeyUp(up) || Input.GetKeyUp(W)) {
+      m_accelerate = false;
+    }
+
+    if (Input.GetKeyUp(down) || Input.GetKeyUp(S)) {
+      m_decelerate = false;
+    }
 	}
+
+  void FixedUpdate() {
+    if (m_decelerate) {
+      Player.S.PM.adjustSpeed(-1);
+    }
+
+    if (m_accelerate) {
+      Player.S.PM.adjustSpeed(1);
+    }
+  }
 }

@@ -9,13 +9,15 @@ public class Player : MonoBehaviour {
 
   public PlayerMovement PM;
   public PlayerInput PI;
+  public PlayerAnimation PA;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
     S = this;
 
     PM = GetComponent<PlayerMovement>();
     PI = GetComponent<PlayerInput>();
+    PA = GetComponent<PlayerAnimation>();
 	}
 	
 	// Update is called once per frame
