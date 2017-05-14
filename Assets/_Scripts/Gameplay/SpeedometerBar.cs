@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class SpeedometerBar : MonoBehaviour {
 
-  public float threshold;
-
-  MeshRenderer mesh;
+  float m_threshold;
+  MeshRenderer m_mesh;
 
 	// Use this for initialization
 	void Start () {
-    mesh = GetComponent<MeshRenderer>();
+    m_mesh = GetComponent<MeshRenderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Player.S.PM.speed <= threshold && mesh.enabled) {
-      mesh.enabled = false;
+		if (Player.S.PM.speed < m_threshold && m_mesh.enabled) {
+      m_mesh.enabled = false;
     }
 
-    if (Player.S.PM.speed > threshold && !mesh.enabled) {
-      mesh.enabled = true;
+    if (Player.S.PM.speed >= m_threshold && !m_mesh.enabled) {
+      m_mesh.enabled = true;
     }
 	}
+
+  public void setThreshold (float threshold_in) {
+    m_threshold = threshold_in;
+  }
 }
