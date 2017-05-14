@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+    print(Physics.
 	}
 
   public void SwitchLanes (Utils.Movement direction) {
