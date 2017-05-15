@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33759425031987964}
   - component: {fileID: 65930816140124460}
   - component: {fileID: 23886146258063102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TruckBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33585920939388200}
   - component: {fileID: 65518833986831142}
   - component: {fileID: 23922595560459466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TruckCabin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33428776995734872}
   - component: {fileID: 65077867607618772}
   - component: {fileID: 23118769430715052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TruckPayload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4164020381126426}
-  m_Layer: 0
+  - component: {fileID: 114711131149713326}
+  m_Layer: 9
   m_Name: Truck_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +87,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565918244489748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 8.875, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -95,7 +96,7 @@ Transform:
   - {fileID: 4648397287575328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4237143759893798
 Transform:
   m_ObjectHideFlags: 1
@@ -285,3 +286,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114711131149713326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565918244489748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c30e83701fb124a955806853a85a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

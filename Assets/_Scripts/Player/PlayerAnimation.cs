@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour {
 
-  public float animSpeed;
-
   bool m_switching;
   float m_target;
   Utils.Movement m_direction;
@@ -28,7 +26,7 @@ public class PlayerAnimation : MonoBehaviour {
             pos.x = m_target;
             m_switching = false;
           } else {
-            pos.x -= animSpeed * Time.deltaTime / 2;
+            pos.x -= Utils.PLAYER_ANIM_SPEED * Time.deltaTime / 2;
           }
           break;
         case Utils.Movement.Right:
@@ -37,7 +35,7 @@ public class PlayerAnimation : MonoBehaviour {
             pos.x = m_target;
             m_switching = false;
           } else {
-            pos.x += animSpeed * Time.deltaTime / 2;
+            pos.x += Utils.PLAYER_ANIM_SPEED * Time.deltaTime / 2;
           }
           break;
       }

@@ -20,7 +20,7 @@ public class Traffic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - m_timeLastSpawn > Utils.SPAWN_TIME) {
+		if (Time.time - m_timeLastSpawn > Utils.CURRENT_SPAWN_TIME) {
       //Spawn random vehicle in random lane
       SpawnVehicle();
     }

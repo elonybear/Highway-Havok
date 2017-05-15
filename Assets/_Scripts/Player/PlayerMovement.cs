@@ -18,12 +18,6 @@ public class PlayerMovement : MonoBehaviour {
     m_parentRigidbody.velocity = Vector3.up * m_speed;
   }
 
-  // Update is called once per frame
-  void Update()
-  {
-
-  }
-
   public void SwitchLanes(Utils.Movement direction)
   {
     float newX = targetX + Utils.DIRECTION_OFFSETS[(int)direction];
@@ -41,7 +35,12 @@ public class PlayerMovement : MonoBehaviour {
     if (m_speed + adjustment < Utils.PLAYER_MIN_SPEED || m_speed + adjustment > Utils.PLAYER_MAX_SPEED) return;
 
     m_speed += adjustment;
+
+    Utils.CURRENT_SPAWN_TIME = Utils.MAX_SPAWN_TIME - (Utils.MAX_SPAWN_TIME - Utils.MIN_SPAWN_TIME) * (m_speed - Utils.PLAYER_MIN_SPEED) / (Utils.PLAYER_MAX_SPEED - Utils.PLAYER_MIN_SPEED) * .5f; 
+
     m_parentRigidbody.velocity = Vector3.up * m_speed;
+
+    Utils.CURRENT_POINT_MULTIPLIER = Utils.MAX_POINT_MULTIPLIER - (Utils.MAX_POINT_MULTIPLIER - Utils.MIN_POINT_MULTIPLIER) * (m_speed - Utils.PLAYER_MAX_SPEED) / (Utils.PLAYER_MAX_SPEED - Utils.PLAYER_MIN_SPEED) * 2;
   }
 
   public float targetX { get; set; }
