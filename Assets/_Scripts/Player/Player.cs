@@ -19,9 +19,6 @@ public class Player : MonoBehaviour {
     PI = GetComponent<PlayerInput>();
     PA = GetComponent<PlayerAnimation>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+  
 }

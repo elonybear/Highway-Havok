@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicles : MonoBehaviour {
+public class Vehicle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +11,11 @@ public class Vehicles : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
+
+  void OnCollisionEnter(Collision collision)
+  {
+    print(collision.transform.gameObject.name);
+  }
 }

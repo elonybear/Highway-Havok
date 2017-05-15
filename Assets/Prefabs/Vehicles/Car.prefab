@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33022619430535974}
   - component: {fileID: 65031493355112676}
   - component: {fileID: 23891924784869602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CarBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4919640684157570}
-  m_Layer: 0
+  - component: {fileID: 114738005515953986}
+  m_Layer: 9
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +56,7 @@ GameObject:
   - component: {fileID: 33591460508705974}
   - component: {fileID: 65046515722534966}
   - component: {fileID: 23536533880348912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CarTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,15 +82,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338947977288544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.875, y: 1, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -8.875, y: 1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4937040625668372}
   - {fileID: 4767311038349430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4937040625668372
 Transform:
   m_ObjectHideFlags: 1
@@ -203,3 +204,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114738005515953986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338947977288544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c30e83701fb124a955806853a85a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
