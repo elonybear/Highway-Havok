@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour {
 
   Rigidbody m_parentRigidbody;
 
+  public float strafeSpeed = 2f;
+
   int m_groundLayerMask;
   float m_speed;
   // Use this for initialization
@@ -37,13 +39,13 @@ public class PlayerMovement : MonoBehaviour {
 
     //Convert to screen-relative pos
     Vector3 mouseScreenPoint = Camera.main.ScreenToWorldPoint(tempMouse);
+    Vector3 curPos = playerPos;
+
+    //Lerp to x pos 
+    curPos.x = Mathf.Lerp (curPos.x, mouseScreenPoint.x * -1, strafeSpeed*Time.deltaTime);
 
     //If moving would exceed bounds
-    if (mouseScreenPoint.x > Utils.PLAYER_MAX_X_POSITION || mouseScreenPoint.x < Utils.PLAYER_MIN_X_POSITION) return;
-
-    //Mouse pos X is inverse of player pos X
-    Vector3 curPos = transform.position;
-    curPos.x = mouseScreenPoint.x * -1;
+    if (curPos.x > Utils.PLAYER_MAX_X_POSITION || curPos.x < Utils.PLAYER_MIN_X_POSITION) return;
 
     transform.position = curPos;
   }

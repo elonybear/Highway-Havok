@@ -23,14 +23,13 @@ public class PlayerInput : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-
-    if (Input.GetKeyDown(right) || Input.GetKeyUp(D)) {
-      Player.S.PM.SwitchLanes(Utils.Movement.Right);
-    }
-
-    if (Input.GetKeyDown(left) || Input.GetKeyUp(A)) {
-      Player.S.PM.SwitchLanes(Utils.Movement.Left);
-    }
+//    if (Input.GetKeyDown(right) || Input.GetKeyUp(D)) {
+//      Player.S.PM.SwitchLanes(Utils.Movement.Right);
+//    }
+//
+//    if (Input.GetKeyDown(left) || Input.GetKeyUp(A)) {
+//      Player.S.PM.SwitchLanes(Utils.Movement.Left);
+//    }
 
     if (Input.GetKeyDown(up) || Input.GetKeyDown(W)) {
       m_decelerate = false;
