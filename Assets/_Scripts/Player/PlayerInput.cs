@@ -16,6 +16,8 @@ public class PlayerInput : MonoBehaviour {
   static readonly KeyCode down = KeyCode.DownArrow;
   static readonly KeyCode S = KeyCode.S;
 
+  static readonly int mouse0 = 0;
+
   bool m_decelerate;
   bool m_accelerate;
 
@@ -46,6 +48,10 @@ public class PlayerInput : MonoBehaviour {
 
     if (Input.GetKeyUp(down) || Input.GetKeyUp(S)) {
       m_decelerate = false;
+    }
+
+    if (Input.GetMouseButton (0)) {
+      Player.S.PM.MouseFollow (Input.mousePosition, transform.position);
     }
 	}
 

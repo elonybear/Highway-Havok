@@ -30,6 +30,30 @@ public class PlayerMovement : MonoBehaviour {
     //transform.position = pos;
   }
 
+  public void MouseFollow(Vector3 mousePos, Vector3 playerPos){
+    //Account for camera height
+    Vector3 tempMouse = mousePos;
+    tempMouse.z = -36.2f;
+
+    Vector3 tempPlayer = playerPos;
+    tempPlayer.z = -37.7f;
+
+    Vector3 mouseScreenPoint = Camera.main.ScreenToWorldPoint(tempMouse);
+    Vector3 playerScreenPoint = Camera.main.ScreenToWorldPoint (tempPlayer);
+    print (mouseScreenPoint.x + " " + playerScreenPoint.x);
+    //print (mousePos.x + " " + playerPos.x); 
+
+//    float move = mousePos.x - playerPos.x;
+
+    //If moving would exceed bounds
+    //if (newX > Utils.PLAYER_MAX_X_POSITION || newX < Utils.PLAYER_MIN_X_POSITION) return;
+
+//    Vector3 curPos = transform.position;
+//    curPos.x += move;
+//
+//    transform.position = curPos;
+  }
+
   public void adjustSpeed(float adjustment) {
 
     if (m_speed + adjustment < Utils.PLAYER_MIN_SPEED || m_speed + adjustment > Utils.PLAYER_MAX_SPEED) return;
