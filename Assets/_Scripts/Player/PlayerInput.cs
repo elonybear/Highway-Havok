@@ -51,6 +51,7 @@ public class PlayerInput : MonoBehaviour {
 
     if (Input.GetMouseButton (0)) {
       Player.S.PM.MouseFollow (Input.mousePosition, transform.position);
+      Player.S.PA.RotateVehicle ();
     }
 	}
 

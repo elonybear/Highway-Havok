@@ -49,4 +49,17 @@ public class PlayerAnimation : MonoBehaviour {
     m_target = target_in;
     m_direction = direction_in;
   }
+
+  public void RotateVehicle(){
+    Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+    Vector3 dir = Input.mousePosition - pos;
+
+    //Angle between mouse and current rot
+    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    Quaternion target = Quaternion.AngleAxis(angle, transform.forward);
+
+    print (angle); 
+
+    transform.rotation =  Quaternion.Slerp (transform.rotation, target, 0.6f * Time.deltaTime);
+  }
 }

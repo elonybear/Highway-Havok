@@ -13,6 +13,9 @@ public static class Utils {
   public static readonly float MIN_SPAWN_TIME = .75f;
   public static readonly float MAX_SPAWN_TIME = 1.25f;
 
+  // Camera
+  public static readonly float CAMERA_HEIGHT_ABSOLUTE = -36.2f;
+
   // Tags and layers
   public static readonly string PLAYER_TAG = "Player";
   public static readonly string LAYER_GROUND = "Ground";

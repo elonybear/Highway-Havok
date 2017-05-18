@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
   public void MouseFollow(Vector3 mousePos, Vector3 playerPos){
     //Account for camera height
     Vector3 tempMouse = mousePos;
-    tempMouse.z = -36.2f;
+    tempMouse.z = Utils.CAMERA_HEIGHT_ABSOLUTE;
 
     //Convert to screen-relative pos
     Vector3 mouseScreenPoint = Camera.main.ScreenToWorldPoint(tempMouse);
